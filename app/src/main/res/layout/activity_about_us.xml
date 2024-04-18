@@ -5,9 +5,9 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".AboutUsActivity">
 
-    <!-- Основной контент, который ранее был корневым элементом -->
+    <!-- Основной контент -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -62,23 +62,39 @@
             </LinearLayout>
 
         </androidx.appcompat.widget.Toolbar>
-
-        <org.osmdroid.views.MapView
-            android:id="@+id/map"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <ImageView
+            android:id="@+id/image_below_toolbar"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_logo"
+            android:layout_centerHorizontal="true"
             android:layout_below="@id/toolbar"
-            android:layout_marginTop="-55dp" />
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/image_description" />
 
+        <TextView
+            android:id="@+id/long_text_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_below_toolbar"
+            android:layout_marginTop="16dp"
+            android:text="@string/about_us_text"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black" />
+        <!-- Другие элементы UI -->
     </RelativeLayout>
 
-    <!-- NavigationView для навигационного ящика -->
+
+    <!-- Навигационное меню -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="  @layout/nav_header"
-    app:menu="@menu/drawer_menu" />
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer_menu"
+    />
 
 </androidx.drawerlayout.widget.DrawerLayout>

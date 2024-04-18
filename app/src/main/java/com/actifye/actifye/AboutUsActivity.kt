@@ -17,20 +17,18 @@ import androidx.core.view.GravityCompat
 import androidx.appcompat.app.ActionBarDrawerToggle
 import android.content.Intent
 
-class MainActivity : AppCompatActivity() {
+class AboutUsActivity : AppCompatActivity() {
 
     private lateinit var toolbar: Toolbar
     private lateinit var menuIcon: ImageView
     private lateinit var profileIcon: ImageView
-    private lateinit var mapView: MapView
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
     private lateinit var logoIcon: ImageView
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_about_us)
 
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -60,18 +58,22 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_payment -> {
                     // Handle home action
                 }
+
                 R.id.nav_promo -> {
                     // Handle profile action
                 }
+
                 R.id.nav_history -> {
                     // Handle profile action
                 }
+
                 R.id.nav_support -> {
                     // Handle profile action
                 }
+
                 R.id.nav_about_us -> {
                     // Handle profile action
-                    val intent = Intent(this@MainActivity, AboutUsActivity::class.java)
+                    val intent = Intent(this@AboutUsActivity, AboutUsActivity::class.java)
                     startActivity(intent)
                     finish()
                 }
@@ -82,55 +84,17 @@ class MainActivity : AppCompatActivity() {
         logoIcon = findViewById(R.id.logo_icon)
 
         logoIcon.setOnClickListener {
-            // Переключаемся обратно на MainActivity
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }
-            val ctx = applicationContext
-        Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx))
-
-        mapView = findViewById(R.id.map)
-        mapView.setTileSource(TileSourceFactory.MAPNIK)
-        mapView.isTilesScaledToDpi = true
-        mapView.setBuiltInZoomControls(false)
-        mapView.setMultiTouchControls(true)
-
-        val mapController = mapView.controller
-        mapController.setZoom(13.0)
-        val startPoint = GeoPoint(56.9496, 24.1052)
-        mapController.setCenter(startPoint)
-
-        addMarker()
     }
-
-    fun addMarker() {
-        val geoPoint = GeoPoint(56.94698949494629, 24.118841660612702)
-        val marker = Marker(mapView)
-        marker.position = geoPoint
-        marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
-        marker.title = "Gym! Riga Origo"
-        marker.snippet = "Stacijas laukums 2, Centra rajons, Rīga, LV-1050 \n 24/7 \n http://www.gymlatvija.lv/"
-        marker.icon = ContextCompat.getDrawable(this, R.drawable.map_pin)
-        mapView.overlays.add(marker)
-        mapView.invalidate()
-    }
-
-    override fun onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
+        override fun onBackPressed() {
+            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                drawerLayout.closeDrawer(GravityCompat.START)
+            } else {
+                super.onBackPressed()
+            }
         }
-    }
 
-    override fun onResume() {
-        super.onResume()
-        mapView.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-        mapView.onPause()
-    }
 }
