@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Actifye</string>
+    <string name="menu">blank</string>
+    <string name="profile">blank</string>
+    <string name="logo">blank</string>
+    <string name="large_image">blank</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+</resources>
