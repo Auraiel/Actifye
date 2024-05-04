@@ -8,16 +8,14 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import org.osmdroid.config.Configuration
-import org.osmdroid.tileprovider.tilesource.TileSourceFactory
-import org.osmdroid.util.GeoPoint
-import org.osmdroid.views.MapView
-import org.osmdroid.views.overlay.Marker
 import androidx.core.view.GravityCompat
 import androidx.appcompat.app.ActionBarDrawerToggle
 import android.content.Intent
+import com.actifye.actifye.data.Friend
+import android.widget.ListView
 
-class AboutUsActivity : AppCompatActivity() {
+
+class FriendsListActivity : AppCompatActivity() {
 
     private lateinit var toolbar: Toolbar
     private lateinit var menuIcon: ImageView
@@ -28,7 +26,7 @@ class AboutUsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_about_us)
+        setContentView(R.layout.activity_friends_list)
 
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -57,35 +55,35 @@ class AboutUsActivity : AppCompatActivity() {
             when (menuItem.itemId) {
                 R.id.nav_payment -> {
                     // Handle home action
-                    val intent = Intent(this@AboutUsActivity, PaymentActivity::class.java)
+                    val intent = Intent(this@FriendsListActivity, PaymentActivity::class.java)
                     startActivity(intent)
                     finish()
                 }
 
                 R.id.nav_promo -> {
                     // Handle profile action
-                    val intent = Intent(this@AboutUsActivity, PromoActivity::class.java)
+                    val intent = Intent(this@FriendsListActivity, PromoActivity::class.java)
                     startActivity(intent)
                     finish()
                 }
 
                 R.id.nav_history -> {
                     // Handle profile action
-                    val intent = Intent(this@AboutUsActivity, HistoryActivity::class.java)
+                    val intent = Intent(this@FriendsListActivity, HistoryActivity::class.java)
                     startActivity(intent)
                     finish()
                 }
 
                 R.id.nav_support -> {
                     // Handle profile action
-                    val intent = Intent(this@AboutUsActivity, SupportActivity::class.java)
+                    val intent = Intent(this@FriendsListActivity, SupportActivity::class.java)
                     startActivity(intent)
                     finish()
                 }
 
                 R.id.nav_about_us -> {
                     // Handle profile action
-                    val intent = Intent(this@AboutUsActivity, AboutUsActivity::class.java)
+                    val intent = Intent(this@FriendsListActivity, FriendsListActivity::class.java)
                     startActivity(intent)
                     finish()
                 }
@@ -100,15 +98,18 @@ class AboutUsActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-        val profileIcon: ImageView = findViewById(R.id.profile_icon)
+        val friendsListView = findViewById<ListView>(R.id.friendsListView)
 
-        // Set an OnClickListener to the profile icon
-        profileIcon.setOnClickListener {
-            // Create an Intent to navigate to FriendsListActivity
-            val intent = Intent(this, FriendsListActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
+        // Sample data for friends
+        val friends = listOf(
+            Friend("Alex", "Online"),
+            Friend("Max", "April 16, 2024, 10:15 AM"),
+            Friend("Arsenijs", "April 29, 2024, 8:45 AM")
+        )
+
+        // Set the adapter with the data
+        val adapter = FriendsListAdapter(this, friends)
+        friendsListView.adapter = adapter
     }
         override fun onBackPressed() {
             if (drawerLayout.isDrawerOpen(GravityCompat.START)) {

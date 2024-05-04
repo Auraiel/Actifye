@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "221456043072",
+    "project_id": "actifyeux",
+    "storage_bucket": "actifyeux.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221456043072:android:e1cbd3c145ba470df763a5",
+        "android_client_info": {
+          "package_name": "com.actifye.actifye"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCJIssDFkQjjXmhBmPfJsXQYoydW1MG7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

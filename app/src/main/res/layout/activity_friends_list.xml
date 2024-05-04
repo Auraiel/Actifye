@@ -5,9 +5,9 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".AboutUsActivity">
 
-    <!-- Основной контент, который ранее был корневым элементом -->
+    <!-- Основной контент -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -62,82 +62,35 @@
             </LinearLayout>
 
         </androidx.appcompat.widget.Toolbar>
-
-        <org.osmdroid.views.MapView
-            android:id="@+id/map"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/toolbar"
-            android:layout_marginTop="-55dp" />
-
-        <LinearLayout
-            android:id="@+id/bottomPanel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:orientation="vertical"
-            android:background="@android:color/white"
-            android:padding="8dp">
+            android:paddingTop="60dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
 
-            <!-- Main Button -->
-            <Button
-                android:id="@+id/mainButton"
+            <!-- ListView for displaying friends and their visit times -->
+            <ListView
+                android:id="@+id/friendsListView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Your Activity"
-                android:background="@drawable/edittext_rounded"
-                android:padding="8dp"/>
-
-            <!-- Secondary Buttons Row -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp">
-
-                <!-- Button 1 -->
-                <ImageButton
-                    android:id="@+id/button1"
-                    android:layout_width="82dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:src="@drawable/football_ball"
-                    android:background="@drawable/edittext_rounded"
-                    android:contentDescription="Button 1"/>
-
-                <!-- Button 2 -->
-                <ImageButton
-                    android:id="@+id/button2"
-                    android:layout_width="82dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:src="@drawable/basketball_ball"
-                    android:background="@drawable/edittext_rounded"
-                    android:contentDescription="Button 2"/>
-
-                <!-- Button 3 -->
-                <ImageButton
-                    android:id="@+id/button3"
-                    android:layout_width="82dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:src="@drawable/tennis_ball"
-                    android:background="@drawable/edittext_rounded"
-                    android:contentDescription="Button 3"/>
-            </LinearLayout>
-
-            <!-- Current Address Text -->
+                android:layout_height="match_parent"
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="1dp"/>
 
         </LinearLayout>
+        <!-- Другие элементы UI -->
     </RelativeLayout>
 
-    <!-- NavigationView для навигационного ящика -->
+
+    <!-- Навигационное меню -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="  @layout/nav_header"
-    app:menu="@menu/drawer_menu" />
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer_menu"
+        />
 
 </androidx.drawerlayout.widget.DrawerLayout>

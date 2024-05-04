@@ -7,7 +7,6 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="image_description">blank</string>
-    <string name="about_us_text">long long long long long long long long
-        long long long long long long long long long long long long long
-        long long long long long long long long long long long long description</string>
+    <string name="about_us_text">Welcome to Actifye, the ultimate tool for sports enthusiasts looking to find, join, or create local sports activities! Our platform harnesses the power of an interactive real-life map to connect you with a diverse array of sporting events happening around you. Whether you\'re looking to join a weekend soccer league, find a morning yoga session in the park, or organize a community basketball game, Actifye makes it easy. We are passionate about making sports accessible to everyone, regardless of skill level or interest. By providing real-time information and a user-friendly map interface, we help you stay active, meet like-minded individuals, and engage with your local sports community. Start exploring today and bring your sports experience to life!</string>
+
 </resources>
