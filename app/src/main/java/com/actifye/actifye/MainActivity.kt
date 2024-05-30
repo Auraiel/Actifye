@@ -132,23 +132,23 @@ class MainActivity : AppCompatActivity() {
 
         // Add click listener to the main button
         mainButton.setOnClickListener {
-            val intent = Intent(this, AboutUsActivity::class.java) // Replace with the target activity
+            val intent = Intent(this, CreateActivityActivity::class.java) // Replace with the target activity
             startActivity(intent)
         }
 
         // Add click listeners to each secondary button
         button1.setOnClickListener {
-            val intent = Intent(this, AboutUsActivity::class.java) // Replace with the target activity
+            val intent = Intent(this, CreateActivityActivity::class.java) // Replace with the target activity
             startActivity(intent)
         }
 
         button2.setOnClickListener {
-            val intent = Intent(this, AboutUsActivity::class.java) // Replace with the target activity
+            val intent = Intent(this, CreateActivityActivity::class.java) // Replace with the target activity
             startActivity(intent)
         }
 
         button3.setOnClickListener {
-            val intent = Intent(this, AboutUsActivity::class.java) // Replace with the target activity
+            val intent = Intent(this, CreateActivityActivity::class.java) // Replace with the target activity
             startActivity(intent)
         }
 

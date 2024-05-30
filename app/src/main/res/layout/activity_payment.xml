@@ -21,8 +21,6 @@
             android:theme="@style/ToolbarTheme"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -62,6 +60,7 @@
             </LinearLayout>
 
         </androidx.appcompat.widget.Toolbar>
+
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -97,20 +96,20 @@
                         android:textStyle="bold"/>
 
                     <TextView
-                        android:id="@+id/subscriptionDescription1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Idk Max pridumaj ctoto"
-                        android:textColor="#FFFFFF"
-                        android:textSize="20sp"/>
-
-                    <TextView
                         android:id="@+id/subscriptionPrice1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="5.99€"
                         android:textColor="#FFFFFF"
                         android:textSize="20sp"/>
+
+                    <TextView
+                        android:id="@+id/subscriptionDetails1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="+ No add.\n+ Free enter to private lobbies."
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -141,20 +140,20 @@
                         android:textStyle="bold"/>
 
                     <TextView
-                        android:id="@+id/subscriptionDescription2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Also i don't know"
-                        android:textColor="#FFFFFF"
-                        android:textSize="20sp"/>
-
-                    <TextView
                         android:id="@+id/subscriptionPrice2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="9.99€"
                         android:textColor="#FFFFFF"
                         android:textSize="20sp"/>
+
+                    <TextView
+                        android:id="@+id/subscriptionDetails2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="+ No add.\n+ Free enter to private lobbies.\n+ Creation of private parties.\n+ Creation fast-cup groups.\n+ Special profile pictures"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -184,14 +183,6 @@
                         android:textStyle="bold"/>
 
                     <TextView
-                        android:id="@+id/subscriptionDescription3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="I D K"
-                        android:textColor="#FFFFFF"
-                        android:textSize="20sp"/>
-
-                    <TextView
                         android:id="@+id/subscriptionPrice3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -199,12 +190,19 @@
                         android:textColor="#FFFFFF"
                         android:textSize="20sp"/>
 
+                    <TextView
+                        android:id="@+id/subscriptionDetails3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="+ No add.\n+ Free enter to private lobbies.\n+ Creation of private parties.\n+ Creation fast-cup groups.\n+ Special profile pictures.\n+ Creation new marks on map for public events.\n+ Being the first at queue of lobbies in recommendations."
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"/>
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
         <!-- Другие элементы UI -->
     </RelativeLayout>
-
 
     <!-- Навигационное меню -->
     <com.google.android.material.navigation.NavigationView

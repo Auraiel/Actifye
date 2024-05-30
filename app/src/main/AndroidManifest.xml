@@ -38,6 +38,9 @@
         <activity
             android:name=".FriendsListActivity"
             android:exported="false" />
+        <activity
+            android:name=".CreateActivityActivity"
+            android:exported="false" />
         <activity android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
